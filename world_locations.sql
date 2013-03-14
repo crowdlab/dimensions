@@ -8,6 +8,8 @@
 -- PHP Version: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET GLOBAL max_allowed_packet=1073741824;
+set character_set_connection=utf8;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -31,7 +33,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Dumping data for table `country_`
 --
 
-INSERT INTO dim_country (id, oid, name_ru, name_en) VALUES
+INSERT IGNORE INTO dim_country (id, oid, name_ru, name_en) VALUES
 (219, 3159, 'Россия', 'Russia'),
 (220, 9908, 'Украина', 'Ukraine'),
 (221, 248, 'Беларусь', 'Belarus'),
@@ -265,7 +267,7 @@ INSERT INTO dim_country (id, oid, name_ru, name_en) VALUES
 -- Dumping data for table `region_`
 --
 
-INSERT INTO dim_region (id, country_id, oid, name_ru, name_en) VALUES
+INSERT IGNORE INTO dim_region (id, country_id, oid, name_ru, name_en) VALUES
 (1611, 219, 4312, 'Москва и Московская обл.', 'Moscow & Moscow Region'),
 (1612, 219, 4925, 'Санкт-Петербург и область', 'Saint Petersburg and Region'),
 (1613, 219, 4052, 'Краснодарский край', 'Krasnodarskii krai'),
@@ -2615,7 +2617,7 @@ INSERT INTO dim_region (id, country_id, oid, name_ru, name_en) VALUES
 -- Dumping data for table `city_`
 --
 
-INSERT INTO dim_city (id, region_id, country_id, oid, name_ru, name_en) VALUES
+INSERT IGNORE INTO dim_city (id, region_id, country_id, oid, name_ru, name_en) VALUES
 (17849, 1611, 219, 4400, 'Москва', 'Moscow'),
 (17850, 1611, 219, 4421, 'Подольск', 'Podolsk'),
 (17851, 1611, 219, 4371, 'Коломна', 'Kolomna'),
