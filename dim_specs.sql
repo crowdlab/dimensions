@@ -1,4 +1,5 @@
 -- not complete
+set character_set_connection=utf8;
 insert into dim_specs(id, name, main)
 values('010000',  'физико-математические науки', 1),
 ('020000',  'естественные науки', 1),
